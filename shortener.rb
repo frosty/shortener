@@ -12,6 +12,7 @@ helpers do
   def base_url
     base = "http://#{Sinatra::Application.host}"
     port = Sinatra::Application.port == 80 ? base : base << ":#{Sinatra::Application.port}"
+    "http://ruby.swampea.co.uk"
   end
   
   def url(path='')
