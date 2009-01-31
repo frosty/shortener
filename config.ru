@@ -6,4 +6,9 @@ set :environment, :production
 # disable :run
 # set :root, File.dirname(__FILE__)
 
+Sinatra::Application.default_options.merge!(
+  :run => false,  
+  :env => :production  
+)
+
 run Sinatra::Application
