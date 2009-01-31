@@ -1,6 +1,7 @@
 require 'shortener'
 
 set :environment, :production
+set :env, :production
 # set :environment, ENV['RACK_ENV'].to_sym
 
 # disable :run
