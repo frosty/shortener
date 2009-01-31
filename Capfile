@@ -1,20 +1,21 @@
 load 'deploy' if respond_to?(:namespace) # cap2 differentiation
 
 set :application, "shortener"
-set :domain,      "ruby.swampea.co.uk"
+set :domain,      "swampea.co.uk"
 set :deploy_to,   "/home/frosty/domains/swampea.co.uk/public/#{application}"
 
 set :scm, :git
-set :repository, "git://"
+set :repository, "git://github.com/frosty/shortener.git"
 
 server domain, :web, :app
 
 # Specific to Rails Machine
-#set :app_server, :passenger
-#set :user, "frosty"
+set :app_server, :passenger
+set :user, "frosty"
 #set :runner, user
 #set :admin_runner, user
-#default_run_options[:pty] = true
+set :use_sudo, false
+default_run_options[:pty] = true
 
 namespace :deploy do
   task :restart do

@@ -17,5 +17,7 @@ type="text/javascript" charset="utf-8"></script>
     <%= yield %>
     
     <p id="footer">&copy; 2009 James Frost</p>
+    <p><%= Sinatra::Application.host %></p>
+    <p><%= Sinatra::Application.port %></p>
   </body>
 </html>
